@@ -1,7 +1,7 @@
 import socket
 
 def myreceive(sock, msglen):
-    msg = ''
+    msg = b''
     while len(msg) < msglen:
         buf = sock.recv(msglen - len(msg))
         if buf == '':
