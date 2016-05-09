@@ -23,9 +23,9 @@ s.listen(10)
 while True:
     conn, addr = s.accept()
     while True:
-        data = conn.recv(conn, 1024)
+        data = conn.recv(1024)
         if data == b'close' or not data:
             conn.close()
             break
-        conn.send(conn, data)
+        conn.send(data)
     conn.close()
