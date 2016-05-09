@@ -23,10 +23,6 @@ s.listen(10)
 while True:
     for i in range(10):
         conn, addr = s.accept()
-        while True:
-            data = conn.recv(1024)
-            if data == b'close' or not data:
-                conn.close()
-                break
-            conn.send(data)
+        data = conn.recv(1024)
+        conn.send(data)
         conn.close()
