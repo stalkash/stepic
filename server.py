@@ -25,7 +25,7 @@ while True:
     conn, addr = s.accept()
     while True:
         data = myreceive(conn, 1024)
-        if data == b'close':
+        if data == b'close' or not data:
             conn.close()
             break
         mysend(conn, data)
